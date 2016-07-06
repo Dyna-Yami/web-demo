@@ -15,11 +15,22 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class DemoController {
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping("/login")
     public String login(String name, Model model) {
         model.addAttribute("name", name);
 
         return "hello";
+    }
+
+    /**
+     * 静态资源默认路径为/WEB-INF/resources,classpath:/static
+     * 使用Thymeleaf模板引擎后，return的字符串解析的根路径为classpath:/templates
+     * 而且默认.html后缀
+     * @return
+     */
+    @RequestMapping("/")
+    public String index() {
+        return "index";
     }
 
 }
