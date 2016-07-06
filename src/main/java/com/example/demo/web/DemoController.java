@@ -22,8 +22,4 @@ public class DemoController {
         return "hello";
     }
 
-    @RequestMapping("/test")
-    public String hello() {
-        return "hello";
-    }
 }
